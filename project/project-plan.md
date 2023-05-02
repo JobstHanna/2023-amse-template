@@ -34,14 +34,14 @@ Data about airports worldwide with location data.
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Data ingestion [#1][i1]
-2. Data cleansing & transformation [#2][i2]
-3. Data Storage [#3][i3]
-4. exploratory Data Analysis [#4][i4]
-5. Data Visuallization [#5][i5]
+1. Data ingestion [#7][i1]
+2. Data cleansing & transformation [#8][i2]
+3. Data Storage [#9][i3]
+4. exploratory Data Analysis [#10][i4]
+5. Data Visualization [#11][i5]
 
-[i1]: https://github.com/jvalue/2023-amse-template/issues/1
-[i2]:
-[i3]:
-[i4]:
-[i5]:
+[i1]: https://github.com/jvalue/2023-amse-template/issues/7#issue-1691028220
+[i2]: https://github.com/jvalue/2023-amse-template/issues/8#issue-1691029860
+[i3]: https://github.com/jvalue/2023-amse-template/issues/9#issue-1691031163
+[i4]: https://github.com/jvalue/2023-amse-template/issues/10#issue-1691031791
+[i5]: https://github.com/jvalue/2023-amse-template/issues/11#issue-1691032772
