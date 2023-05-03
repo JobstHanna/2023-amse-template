@@ -3,28 +3,28 @@
 ## Summary
 
 <!-- Describe your data science project in max. 5 sentences. -->
-In this project, data on air quality at airports as well as the surrounding areas are analyzed. 
-The question "Is there a connection between airports and particulate matter?" is to be answered. 
+In this project, data on  business flights and vissiting numbers of museums of Cologne are analyzed. 
+The question "Is there a connection between business trips and cultural activities in Cologne?" is to be answered. 
 
 ## Rationale
 
 <!-- Outline the impact of the analysis, e.g. which pains it solves. -->
-The analysis helps the government make better decisions with regard to approving construction plans for new airports. It also helps to make better recommendations for the health of residents living near airports.
+The analysis helps the city of Cologne or the tourism office of Cologne to form special offers for company in order to add cultural activities to a business trip.
 
 ## Datasources
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1: Luftqualität / Airquality
-* Metadata URL: https://mobilithek.info/offers/-7149794394747118734
-* Data URL: https://github.com/JobstHanna/2023-amse-template/blob/04112b9dbb7195a3fd50184e6b05ffabcaee12c0/-7149794394747118734.csv
+### Datasource1: Dienstfluege CO2 Stadt Koeln 2019 / BUsiness Flights CO2 CIty of Cologne 2019
+* Metadata URL: https://mobilithek.info/offers/-1005216978664916194
+* Data URL: 
 * Data Type: CSV
 
 Air quality data of differetn locations throughout Germany.
 
-### Datasource2: Flughäfen weltweit / Airports worldwide
-* Metadata URL: https://data.europa.eu/data/datasets/rhein-kreis-neuss-flughafen-weltweit-rhein-kreis-neuss?locale=de
-* Data URL: https://github.com/JobstHanna/2023-amse-template/blob/04112b9dbb7195a3fd50184e6b05ffabcaee12c0/rhein-kreis-neuss-flughafen-weltweit.csv
+### Datasource2: Besucherzahlen Koelner Museen / Visiting numbers of museums in Cologne
+* Metadata URL: https://www.govdata.de/web/guest/suchen/-/details/besucherzahlen-koelner-museen
+* Data URL: 
 * Data Type: CSV 
 
 Data about airports worldwide with location data.
