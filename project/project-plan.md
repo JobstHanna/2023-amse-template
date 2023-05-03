@@ -20,14 +20,14 @@ The analysis helps the city of Cologne or the tourism office of Cologne to form 
 * Data URL: https://github.com/JobstHanna/2023-amse-template/blob/ea02bdc0d8dc8f14786b663ad6d145caa9fde8f1/project/Kompensationszahlungen_Fluege.csv
 * Data Type: CSV
 
-Air quality data of differetn locations throughout Germany.
+Data about business flight and compensations paid for the CO2 emission.
 
 ### Datasource2: Besucherzahlen Koelner Museen / Visiting numbers of museums in Cologne
 * Metadata URL: https://www.govdata.de/web/guest/suchen/-/details/besucherzahlen-koelner-museen
-* Data URL: 
+* Data URL: https://github.com/JobstHanna/2023-amse-template/blob/c0e5f2a243bf8338bd57e2e720a4482f503912aa/project/Besucherzahlen%20Museen%202019.csv
 * Data Type: CSV 
 
-Data about airports worldwide with location data.
+Data about the visiting numbers of museums in Cologne in 2019.
 
 ## Work Packages
 
