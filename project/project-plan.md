@@ -17,7 +17,7 @@ The analysis helps the city of Cologne or the tourism office of Cologne to form 
 
 ### Datasource1: Dienstfluege CO2 Stadt Koeln 2019 / BUsiness Flights CO2 CIty of Cologne 2019
 * Metadata URL: https://mobilithek.info/offers/-1005216978664916194
-* Data URL: 
+* Data URL: https://github.com/JobstHanna/2023-amse-template/blob/ea02bdc0d8dc8f14786b663ad6d145caa9fde8f1/project/Kompensationszahlungen_Fluege.csv
 * Data Type: CSV
 
 Air quality data of differetn locations throughout Germany.
