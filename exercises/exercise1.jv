@@ -1,0 +1,48 @@
+
+// Write data into a SQLite database called “airports.sqlite”, in the table “airports”
+// Assign fitting built-in SQLite types (e.g., BIGINT, TEXT or FLOAT) to all columns
+// No further data validation is required, do not drop any rows or change any data points
+// https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets/rhein-kreis-neuss-flughafen-weltweit/exports/csv
+
+
+pipeline FlightsPipeline {
+    
+    block FlightsFileExtractor oftype HttpExtractor {
+    // key: value
+    url: "https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets/rhein-kreis-neuss-flughafen-weltweit/exports/csv";
+    } 
+    block FlightsTextFileInterpreter oftype TextFileInterpreter {
+    
+    } 
+    block FlightsCSVInterpreter oftype CSVInterpreter {  
+        delimiter: ";";
+    }
+    block FlightsTableInterpreter oftype TableInterpreter {  
+        header: true;
+        columns: [
+            "column_1" oftype text,
+            "column_2" oftype text,
+            "column_3" oftype text,
+            "column_4" oftype text,
+            "column_5" oftype text,
+            "column_6" oftype text,
+            "column_7" oftype text,
+            "column_8" oftype text,
+            "column_9" oftype integer,
+            "column_10" oftype decimal,
+            "column_11" oftype text,
+            "column_12" oftype text,
+            "geo_punkt" oftype text,
+        ];
+    }
+    block FlightsLoader oftype SQLiteLoader {  
+        table: "airports";
+        file: "./airports.sqlite";
+    }
+
+    FlightsFileExtractor
+        -> FlightsTextFileInterpreter
+        -> FlightsCSVInterpreter
+        -> FlightsTableInterpreter
+        -> FlightsLoader;
+}
