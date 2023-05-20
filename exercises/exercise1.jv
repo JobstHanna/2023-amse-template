@@ -2,8 +2,6 @@
 // Write data into a SQLite database called “airports.sqlite”, in the table “airports”
 // Assign fitting built-in SQLite types (e.g., BIGINT, TEXT or FLOAT) to all columns
 // No further data validation is required, do not drop any rows or change any data points
-// https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets/rhein-kreis-neuss-flughafen-weltweit/exports/csv
-
 
 pipeline FlightsPipeline {
     
