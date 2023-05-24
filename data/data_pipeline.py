@@ -4,8 +4,8 @@ import sqlite3
 # df1 = CO2 of business flights
 # df2 = visiting numbers of museums 
 
-df1 = pd.read_csv("https://offenedaten-koeln.de/sites/default/files/Kompensationszahlungen_Fluege.csv", sep=",")
-df2 = pd.read_csv("https://offenedaten-koeln.de/sites/default/files/Besucherzahlen%20Museen%202019.csv", sep=",")
+df1 = pd.read_csv("https://offenedaten-koeln.de/sites/default/files/Kompensationszahlungen_Fluege.csv", delimiter=";")
+df2 = pd.read_csv("https://offenedaten-koeln.de/sites/default/files/Besucherzahlen%20Museen%202019.csv", delimiter=";")
 
 
 #df1.columns.values[]= 'name'
