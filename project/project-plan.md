@@ -2,36 +2,30 @@
 
 ## Summary
 
-<!-- Describe your data science project in max. 5 sentences. -->
-In this project, data on  business flights and vissiting numbers of museums of Cologne are analyzed. 
-The question "Is there a connection between business trips and cultural activities in Cologne?" is to be answered. 
+In this project, data on  on fines paid in the city of Cologne are analyzed. 
+The question "Did anything significantlly change from 2016 to 2018?" is to be answered. 
 
 ## Rationale
 
-<!-- Outline the impact of the analysis, e.g. which pains it solves. -->
-The analysis helps the city of Cologne or the tourism office of Cologne to form special offers for company in order to add cultural activities to a business trip.
+The analysis helps to see if there are connectins bewtween certain things and how the fine has changed from 2016 to 2018.
 
 ## Datasources
 
-<!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
-
-### Datasource1: Dienstfluege CO2 Stadt Koeln 2019 / BUsiness Flights CO2 CIty of Cologne 2019
-* Metadata URL: https://mobilithek.info/offers/-1005216978664916194
-* Data URL: https://github.com/JobstHanna/2023-amse-template/blob/ea02bdc0d8dc8f14786b663ad6d145caa9fde8f1/project/Kompensationszahlungen_Fluege.csv
+### Datasource1: Bußgelddaten Koeln / Finepayment Data Cologne 2016
+* Metadata URL: https://mobilithek.info/offers/-6868803491867755462
+* Data URL: https://offenedaten-koeln.de/sites/default/files/Bussgeld_2016.csv
 * Data Type: CSV
 
-Data about business flight and compensations paid for the CO2 emission.
+Data about fine penalty paid in regards of cars in the city in Cologne in january of the year 2016.
 
-### Datasource2: Besucherzahlen Koelner Museen / Visiting numbers of museums in Cologne
-* Metadata URL: https://www.govdata.de/web/guest/suchen/-/details/besucherzahlen-koelner-museen
-* Data URL: https://github.com/JobstHanna/2023-amse-template/blob/c0e5f2a243bf8338bd57e2e720a4482f503912aa/project/Besucherzahlen%20Museen%202019.csv
+### Datasource2: Bußgelddaten Koeln / Finepayment Data Cologne 2018
+* Metadata URL: https://mobilithek.info/offers/-3334718157215585369
+* Data URL: https://offenedaten-koeln.de/sites/default/files/Januar_2018.csv
 * Data Type: CSV 
 
-Data about the visiting numbers of museums in Cologne in 2019.
+Data about fine penalty paid in regards of cars in the city in Cologne in january of the year 2018.
 
 ## Work Packages
-
-<!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
 1. Data Ingestion [#1][i1]
 2. Data Cleansing & Transformation [#2][i2]
