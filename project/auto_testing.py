@@ -12,9 +12,7 @@ def pipeline():
     if os.path.exists("./data/my_data.sqlite"):
         print("Test result: No defects were dected sucessful")
     else:
-        print("Test result: Defects were detected")
-    
-    
+        print("Test result: Defects were detected")    
 
 
 if __name__ == "__main__":
