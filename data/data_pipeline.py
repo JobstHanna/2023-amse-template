@@ -13,9 +13,6 @@ df2 = pd.read_csv("https://offenedaten-koeln.de/sites/default/files/Januar_2018.
 #df1.columns.values[]= 'name'
 #df2.columns.values[]= 'name'
 
-df1.replace(to_replace="", value='a')
-df2.replace(to_replace='"', value='a')
-
 sink = sqlite3.connect("data/fine_data.sqlite")
 
 
