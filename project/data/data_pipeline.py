@@ -13,7 +13,7 @@ df2 = pd.read_csv("https://offenedaten-koeln.de/sites/default/files/Januar_2018.
 #df1.columns.values[]= 'name'
 #df2.columns.values[]= 'name'
 
-sink = sqlite3.connect("data/fine_data.sqlite")
+sink = sqlite3.connect("project/data/fine_data.sqlite")
 
 
 df1.to_sql("fine16", sink, if_exists="replace", index=False)
