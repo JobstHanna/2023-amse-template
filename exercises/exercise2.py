@@ -1,12 +1,41 @@
 import pandas as pd
+from sqlalchemy import create_engine, types
 
-import ssl
+#ssl._create_default_https_context = ssl._create_unverified_context
 
-ssl._create_default_https_context = ssl._create_unverified_context
+df = pd.read_csv("https://download-data.deutschebahn.com/static/datasets/haltestellen/D_Bahnhof_2020_alle.CSV", sep=";")
 
-airports = pd.read_csv("ttps://download-data.deutschebahn.com/static/datasets/haltestellen/D_Bahnhof_2020_alle.CSV", sep=";")
+df = df.drop(columns=["Status"])
 
-airports.to_sql('trainstops', 'sqlite:///trainstops.sqlite', if_exists='replace', index=False)
+df = df.dropna()
+
+sql_types = {
+    'EVA_NR': types.BIGINT,
+    'DS100': types.TEXT,
+    'IFOPT': types.TEXT,
+    'NAME': types.TEXT,
+    'Verkehr': types.TEXT,
+    'Laenge': types.FLOAT,
+    'Breite': types.FLOAT,
+    'Betreiber_Name': types.TEXT,
+    'Betreiber_Nr': types.BIGINT}
+
+verkehr_valids = ["FV", "RV", "nur DPN"]
+df = df[df["Verkehr"].isin(verkehr_valids)]
+
+df["Laenge"] = df["Laenge"].replace(to_replace=r",", value=".",regex=True)
+df["Breite"] = df["Breite"].replace(to_replace=r",", value=".",regex=True)
+df["Laenge"] = df["Laenge"].astype(float)
+df["Breite"] = df["Breite"].astype(float)
+df = df[df["Laenge"] >= -90]
+df = df[df["Laenge"] <= 90]
+df = df[df["Breite"] >= -90]
+df = df[df["Breite"] <= 90]
+
+df["IFOPT"] = df["IFOPT"].str.extract('(^[a-zA-Z]{2}:[0-9]*:[0-9]*[:[0-9]*]*)')
+
+engine = create_engine("sqlite:///trainstops.sqlite")
+df.to_sql('trainstops',engine ,  if_exists='replace',index= False, dtype= sql_types)
 
 #First, drop the "Status" column
 #Then, drop all rows with invalid values:
