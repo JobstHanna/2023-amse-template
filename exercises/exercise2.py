@@ -17,8 +17,8 @@ df = pd.read_csv("https://download-data.deutschebahn.com/static/datasets/haltest
 
 df = df.drop(columns=["Status"])
 
-traffic = ["FV", "RV", "nur DPN"]
-df = df[df["Verkehr"].isin(traffic)]
+valid = ["FV", "RV", "nur DPN"]
+df = df[df["Verkehr"].isin(valid)]
 
 df["Laenge"] = df["Laenge"].replace(to_replace=r",", value=".",regex=True).astype(float)
 df["Breite"] = df["Breite"].replace(to_replace=r",", value=".",regex=True).astype(float)
