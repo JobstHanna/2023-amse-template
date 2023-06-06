@@ -20,8 +20,8 @@ df = df.drop(columns=["Status"])
 traffic = ["FV", "RV", "nur DPN"]
 df = df[df["Verkehr"].isin(traffic)]
 
-df["Laenge"] = df["Laenge"].replace(to_replace=r",", value=".",regex=True)
-df["Breite"] = df["Breite"].replace(to_replace=r",", value=".",regex=True)
+df["Laenge"] = df["Laenge"].replace(to_replace=r",", value=".",regex=True).astype(float)
+df["Breite"] = df["Breite"].replace(to_replace=r",", value=".",regex=True).astype(float)
 #df["Laenge"] = df["Laenge"].astype(float)
 #df["Breite"] = df["Breite"].astype(float)
 df = df[df["Laenge"] >= -90]
