@@ -22,10 +22,10 @@ df = df[df["Verkehr"].isin(valid)]
 
 df["Laenge"] = df["Laenge"].replace(to_replace=r",", value=".",regex=True).astype(float)
 df["Breite"] = df["Breite"].replace(to_replace=r",", value=".",regex=True).astype(float)
-df = df(df["Laenge"] >= -90)
-df = df(df["Laenge"] <= 90)
-df = df(df["Breite"] >= -90)
-df = df(df["Breite"] <= 90)
+df = df[df["Laenge"] >= -90]
+df = df[df["Laenge"] <= 90]
+df = df[df["Breite"] >= -90]
+df = df[df["Breite"] <= 90]
 
 df["IFOPT"] = df["IFOPT"].str.extract('(^[a-zA-Z]{2}:[0-9]*:[0-9]*[:[0-9]*]*)')
 
