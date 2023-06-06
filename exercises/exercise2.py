@@ -2,13 +2,6 @@ import pandas as pd
 from sqlalchemy import create_engine, types
 
 #ssl._create_default_https_context = ssl._create_unverified_context
-
-df = pd.read_csv("https://download-data.deutschebahn.com/static/datasets/haltestellen/D_Bahnhof_2020_alle.CSV", sep=";")
-
-df = df.drop(columns=["Status"])
-
-df = df.dropna()
-
 sql_types = {
     'EVA_NR': types.BIGINT,
     'DS100': types.TEXT,
@@ -20,19 +13,26 @@ sql_types = {
     'Betreiber_Name': types.TEXT,
     'Betreiber_Nr': types.BIGINT}
 
-verkehr_valids = ["FV", "RV", "nur DPN"]
-df = df[df["Verkehr"].isin(verkehr_valids)]
+df = pd.read_csv("https://download-data.deutschebahn.com/static/datasets/haltestellen/D_Bahnhof_2020_alle.CSV", sep=";")
+
+df = df.drop(columns=["Status"])
+
+traffic = ["FV", "RV", "nur DPN"]
+df = df[df["Verkehr"].isin(traffic)]
 
 df["Laenge"] = df["Laenge"].replace(to_replace=r",", value=".",regex=True)
 df["Breite"] = df["Breite"].replace(to_replace=r",", value=".",regex=True)
-df["Laenge"] = df["Laenge"].astype(float)
-df["Breite"] = df["Breite"].astype(float)
+#df["Laenge"] = df["Laenge"].astype(float)
+#df["Breite"] = df["Breite"].astype(float)
 df = df[df["Laenge"] >= -90]
 df = df[df["Laenge"] <= 90]
 df = df[df["Breite"] >= -90]
 df = df[df["Breite"] <= 90]
 
 df["IFOPT"] = df["IFOPT"].str.extract('(^[a-zA-Z]{2}:[0-9]*:[0-9]*[:[0-9]*]*)')
+
+# empty cells
+df = df.dropna()
 
 engine = create_engine("sqlite:///trainstops.sqlite")
 df.to_sql('trainstops',engine ,  if_exists='replace',index= False, dtype= sql_types)
