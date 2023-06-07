@@ -1,0 +1,16 @@
+name: Project Work Feedback
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - project/**
+
+jobs:
+  exercise-feedback:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test Pipeline
+    run: |
+    ../project/tests.sh
