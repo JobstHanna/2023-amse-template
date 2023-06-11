@@ -3,14 +3,14 @@ name: Project Work Feedback
 on:
   push:
     branches:
-    - main
+      - main
     paths:
-    - project/**
+      - project/**
 
 jobs:
-  exercise-feedback:
+  test:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Test Pipeline
-    run: |
-    ../project/tests.sh
+      - name: Run Test Pipeline
+        run: python 3 ../project/tests.sh
