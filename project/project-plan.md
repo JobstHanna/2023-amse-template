@@ -3,11 +3,12 @@
 ## Summary
 
 In this project, data on  on fines paid in the city of Cologne are analyzed. 
-The question "Did anything significantlly change from 2016 to 2018?" is to be answered. 
+The question "Which penalties are most common? Which fabrikats are most likely to get fined? Did a penalty or brand got worse or better?" is to be answered. 
+The Hpothesis is: "There won't be any big changes noticeable."
 
 ## Rationale
 
-The analysis helps to see if there are connectins bewtween certain things and how the fine has changed from 2016 to 2018.
+The analysis helps to see if there are connections bewtween brand of cars and the and how the fine has changed from 2016 to 2018.
 
 ## Datasources
 
@@ -16,14 +17,14 @@ The analysis helps to see if there are connectins bewtween certain things and ho
 * Data URL: https://offenedaten-koeln.de/sites/default/files/Bussgeld_2016.csv
 * Data Type: CSV
 
-Data about fine penalty paid in regards of cars in the city in Cologne in january of the year 2016.
+Data about fine penalty payment in regards of cars in the city in Cologne in january of the year 2016.
 
 ### Datasource2: Bußgelddaten Koeln / Finepayment Data Cologne 2018
 * Metadata URL: https://mobilithek.info/offers/-3334718157215585369
 * Data URL: https://offenedaten-koeln.de/sites/default/files/Januar_2018.csv
 * Data Type: CSV 
 
-Data about fine penalty paid in regards of cars in the city in Cologne in january of the year 2018.
+Data about fine penalty payment in regards of cars in the city in Cologne in january of the year 2018.
 
 ## Work Packages
 
