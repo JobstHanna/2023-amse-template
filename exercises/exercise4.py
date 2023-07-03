@@ -33,13 +33,9 @@ def transform(csv):
 
 def cel_to_fahr(df):
     # change Celsius to Fahrenheit
-   # df["Temperatur"] = df["Temperatur"].astype(float).str.replace(",", ".")
-    # df["Temperatur"] = df["Temperatur"].astype(float)
     df["Temperatur"] = (df["Temperatur"] * 9 / 5) + 32
     df["Temperatur"] = df["Temperatur"].round(2)
 
-    #df["Batterietemperatur"] = df["Batterietemperatur"].astype(float).str.replace(",", ".")
-    # df["Batterietemperatur"] = df["Batterietemperatur"].astype(float)
     df["Batterietemperatur"] = (df["Batterietemperatur"] * 9 / 5) + 32
     df["Batterietemperatur"] = df["Batterietemperatur"].round(2)
     return df
