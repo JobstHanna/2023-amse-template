@@ -13,7 +13,7 @@ def unzip_file(zip_path, extract_path):
     with zipfile.ZipFile(zip_path, 'r') as csv:
         csv.extractall(extract_path)
         
-def load(df, path, tablename):
+def store(df, path, tablename):
     conn = sqlite3.connect(path)
     df.to_sql(tablename, conn, index=False, if_exists="replace")
     #   conn.close()
@@ -33,11 +33,18 @@ def transform(csv):
 
 def cel_to_fahr(df):
     # change Celsius to Fahrenheit
-    df["Temperatur"] = df["Temperatur"] * 9 / 5 + 32
-    df["Batterietemperatur"] = df["Batterietemperatur"] * 9 / 5 + 32
+   # df["Temperatur"] = df["Temperatur"].astype(float).str.replace(",", ".")
+    # df["Temperatur"] = df["Temperatur"].astype(float)
+    df["Temperatur"] = (df["Temperatur"] * 9 / 5) + 32
+    df["Temperatur"] = df["Temperatur"].round(2)
+
+    #df["Batterietemperatur"] = df["Batterietemperatur"].astype(float).str.replace(",", ".")
+    # df["Batterietemperatur"] = df["Batterietemperatur"].astype(float)
+    df["Batterietemperatur"] = (df["Batterietemperatur"] * 9 / 5) + 32
+    df["Batterietemperatur"] = df["Batterietemperatur"].round(2)
     return df
 
-def validate():
+def validate(df):
     # Geraet to be an id over 0
     df = df[df["Geraet"] > 0]
     df = df[df["Monat"] > 0]
@@ -45,7 +52,7 @@ def validate():
     
     
 def main():
-    zip_file = "mowesta-dataset-20221107.zip"
+    zip_file = "mowesta-dataset.zip"
     csv_file = "data.csv"
     db = "temperatures.sqlite"
     
@@ -64,8 +71,8 @@ def main():
     # validate data
     df = validate(df)
 
-    # load data
-    load(df, db, "temperatures")
+    # store data
+    store(df, db, "temperatures")
 
 
 
