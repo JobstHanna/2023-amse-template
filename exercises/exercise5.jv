@@ -1,6 +1,6 @@
 
 // GTFS data
-pipeline Stops_Pipeline {
+pipeline StopsPipeline {
 	GTFS_Extractor
 		-> ZipArchiveInterpreter
 		-> DataFilePicker
