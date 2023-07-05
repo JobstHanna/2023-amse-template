@@ -1,13 +1,13 @@
 
 // GTFS data
-pipeline StopsPipeline {
+pipeline GTFSPipeline {
 	GTFS_Extractor
 		-> ZipArchiveInterpreter
 		-> DataFilePicker
         -> GTFS_TextFileInterpreter
         -> GTFS_CSVInterpreter
         -> GTFS_TableInterpreter
-        -> Loader;
+        -> DataLoader;
 
 	block GTFS_Extractor oftype HttpExtractor {
 		url: "https://gtfs.rhoenenergie-bus.de/GTFS.zip";
@@ -61,7 +61,7 @@ pipeline StopsPipeline {
 	}
 
 	// Load data
-	block Loader oftype SQLiteLoader {
+	block DataLoader oftype SQLiteLoader {
 		table: "stops";
 		file: "gfts.sqlite";
 	}
